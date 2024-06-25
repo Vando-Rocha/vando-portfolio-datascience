@@ -1,0 +1,167 @@
+/* Estilos globais */
+*{
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos do menu */
+nav {
+  background-color: rgba(51, 51, 51, 0.95);
+  /* Fundo inicial com transparência */
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  /* Garante que o menu esteja acima de outros elementos */
+  transition: all 0.3s ease;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px 30px;
+  /* Aumentando o tamanho dos links */
+  margin: 0 10px;
+  font-size: 20px;
+  /* Aumentando o tamanho da fonte */
+}
+
+.nav-transparent {
+  background-color: rgba(51, 51, 51, 0.85);
+  /* Fundo transparente ao rolar */
+}
+
+.nav-shrink {
+  padding: 10px 0;
+  /* Menor padding ao diminuir */
+  font-size: 18px;
+  /* Menor tamanho de fonte */
+}
+
+/* Estilos do banner */
+.banner {
+  position: relative;
+  /* Para permitir o posicionamento do pseudo-elemento */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/img/banner_topo.gif');
+  /* Substitua pela sua imagem de banner */
+  background-size: cover;
+  opacity: 0.4;
+  /* Opacidade do plano de fundo */
+}
+
+.banner h1 {
+  font-size: 52px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgb(251, 44, 44);
+  position: relative;
+  /* Para garantir que o texto fique sobreposto ao plano de fundo */
+  z-index: 1;
+  /* Garante que o texto esteja acima do pseudo-elemento */
+}
+.banner p {
+  font-size: 28px;
+  color: #ffffff;
+}
+
+/* Estilos da seção "Sobre" */
+.about {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Estilos da galeria de projetos */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.project-card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  background-color: #333333;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card .project-info {
+  padding: 20px;
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-card a {
+  display: block;
+  background-color: #666666;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.project-card a:hover {
+  background-color: #555555;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .project-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 100%;
+  }
+}
